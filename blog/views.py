@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.views import View
 from django.contrib import messages
 
@@ -72,6 +72,7 @@ def editar_pagina(request, pk):
 
 # Borrar — requiere login (decorador)
 @login_required
+@user_passes_test(lambda u: u.is_staff)
 def borrar_pagina(request, pk):
     pagina = get_object_or_404(Pagina, pk=pk)
     if request.method == 'POST':

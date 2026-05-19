@@ -23,7 +23,9 @@
             <a href="{% url 'detalle_pagina' pagina.pk %}" class="btn btn-primario">Leer más</a>
             {% if user.is_authenticated %}
                 <a href="{% url 'editar_pagina' pagina.pk %}" class="btn btn-secundario">Editar</a>
-                <a href="{% url 'borrar_pagina' pagina.pk %}" class="btn btn-peligro">Borrar</a>
+                {% if user.is_staff %}
+                <a href="{% url 'borrar_pagina' pagina.id %}" class="btn btn-peligro">Borrar</a>
+                {% endif %}
             {% endif %}
         </div>
     {% endfor %}
