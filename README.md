@@ -50,8 +50,3 @@ Abrir en el navegador:
 
 ## Admin
 `/admin/` con el usuario creado por `createsuperuser`.
-
-## Notas
-- **No subir `db.sqlite3`** al repositorio.
-- Las imágenes se guardan en `media/`.
-- El proyecto usa templates con herencia y navegación en `base.html`.
