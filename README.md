@@ -50,3 +50,6 @@ Abrir en el navegador:
 
 ## Admin
 `/admin/` con el usuario creado por `createsuperuser`.
+
+## Video demo
+https://youtu.be/vE_I8YnqbX0
