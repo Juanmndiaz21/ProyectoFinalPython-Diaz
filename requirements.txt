@@ -1,3 +1,7 @@
-Django==4.2.7
-Pillow==10.1.0
-django-ckeditor==6.7.0
+asgiref==3.11.1
+Django==6.0.5
+dotenv==0.9.9
+pillow==12.2.0
+python-dotenv==1.2.2
+sqlparse==0.5.5
+tzdata==2026.2
