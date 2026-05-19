@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Páginas{% endblock %}
+
+{% block contenido %}
+<h1>Páginas</h1>
+
+{% if user.is_authenticated %}
+    <a href="{% url 'crear_pagina' %}" class="btn btn-exito" style="margin-bottom:20px; display:inline-block;">+ Nueva Página</a>
+{% endif %}
+
+{% if paginas %}
+    {% for pagina in paginas %}
+        <div class="tarjeta">
+            {% if pagina.imagen %}
+                <img src="{{ pagina.imagen.url }}" alt="{{ pagina.titulo }}" style="max-width:100%; border-radius:4px; margin-bottom:10px;">
+            {% endif %}
+            <h2>{{ pagina.titulo }}</h2>
+            {% if pagina.subtitulo %}
+                <p><em>{{ pagina.subtitulo }}</em></p>
+            {% endif %}
+            <p style="color:#777; font-size:13px;">{{ pagina.fecha_creacion }} — por {{ pagina.autor.username }}</p>
+            <a href="{% url 'detalle_pagina' pagina.pk %}" class="btn btn-primario">Leer más</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'editar_pagina' pagina.pk %}" class="btn btn-secundario">Editar</a>
+                <a href="{% url 'borrar_pagina' pagina.pk %}" class="btn btn-peligro">Borrar</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="tarjeta">
+        <p>No hay páginas aún.</p>
+    </div>
+{% endif %}
+{% endblock %}

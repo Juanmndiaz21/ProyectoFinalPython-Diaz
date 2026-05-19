@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Bienvenido al Blog</h1>
+    <p>Este es mi blog personal donde comparto artículos y reflexiones.</p>
+    <a href="{% url 'lista_paginas' %}" class="btn btn-primario">Ver páginas</a>
+    <a href="{% url 'acerca_de' %}" class="btn btn-secundario">Acerca de mí</a>
+</div>
+{% endblock %}

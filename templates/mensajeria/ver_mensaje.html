@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{ mensaje.asunto }}{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>{{ mensaje.asunto }}</h1>
+    <p><strong>De:</strong> {{ mensaje.remitente.username }}</p>
+    <p><strong>Para:</strong> {{ mensaje.destinatario.username }}</p>
+    <p style="color:#777; font-size:13px;">{{ mensaje.fecha_envio }}</p>
+    <hr style="margin: 16px 0;">
+    <p>{{ mensaje.cuerpo }}</p>
+    <br>
+    <a href="{% url 'bandeja_entrada' %}" class="btn btn-secundario">← Volver</a>
+    <a href="{% url 'enviar_mensaje' %}" class="btn btn-primario">Responder</a>
+</div>
+{% endblock %}

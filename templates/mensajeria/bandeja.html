@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Bandeja de entrada{% endblock %}
+
+{% block contenido %}
+<h1>Bandeja de entrada</h1>
+<a href="{% url 'enviar_mensaje' %}" class="btn btn-exito" style="margin-bottom:20px; display:inline-block;">+ Nuevo mensaje</a>
+
+{% if mensajes_recibidos %}
+    {% for mensaje in mensajes_recibidos %}
+        <div class="tarjeta" style="{% if not mensaje.leido %}border-left: 4px solid #2c3e50;{% endif %}">
+            <p><strong>De:</strong> {{ mensaje.remitente.username }}</p>
+            <p><strong>Asunto:</strong> {{ mensaje.asunto }}</p>
+            <p style="color:#777; font-size:13px;">{{ mensaje.fecha_envio }}</p>
+            {% if not mensaje.leido %}<span style="color:#e74c3c; font-size:12px;">● No leído</span>{% endif %}
+            <br><br>
+            <a href="{% url 'ver_mensaje' mensaje.pk %}" class="btn btn-primario">Ver mensaje</a>
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="tarjeta">
+        <p>No hay mensajes aún.</p>
+    </div>
+{% endif %}
+{% endblock %}

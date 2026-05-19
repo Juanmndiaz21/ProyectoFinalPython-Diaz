@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Acerca de{% endblock %}
+
+{% block contenido %}
+<section class="about-card">
+    <div class="about-avatar">JMD</div>
+
+    <h1 class="about-title">Sobre Mí</h1>
+    <p class="about-subtitle">JUAN MANUEL DIAZ</p>
+
+    <div class="about-divider"></div>
+
+    <p class="about-text">
+        ¡Hola! Soy Juan Manuel Díaz, estudiante de Ingeniería en Inteligencia Artificial en la UNL y Desarrollador Fullstack en formación en Coderhouse.
+    </p>
+    <p class="about-text">
+        Me apasiona la tecnología y mantenerme en constante aprendizaje, por lo que próximamente me estaré capacitando también en AI Automation. Mi meta es fusionar el desarrollo web con la inteligencia artificial para crear soluciones de software inteligentes, eficientes y automatizadas.
+    </p>
+
+    <div class="about-cards">
+        <div class="about-mini-card">
+            <div class="mini-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <div class="mini-title">Ingeniería en IA</div>
+            <div class="mini-sub">UNL — En curso</div>
+        </div>
+        <div class="about-mini-card">
+            <div class="mini-icon"><i class="bi bi-laptop-fill"></i></div>
+            <div class="mini-title">Fullstack</div>
+            <div class="mini-sub">Coderhouse — En curso</div>
+        </div>
+        <div class="about-mini-card">
+            <div class="mini-icon"><i class="bi bi-robot"></i></i></i></div>
+            <div class="mini-title">AI Automation</div>
+            <div class="mini-sub">Coderhouse — Proximamente</div>
+        </div>
+    </div>
+
+    <a href="https://github.com/Juanmndiaz21" target="_blank"><button class="about-cta"><i class="bi bi-github"></i> Mi Github</button></a>
+</section>
+{% endblock %}

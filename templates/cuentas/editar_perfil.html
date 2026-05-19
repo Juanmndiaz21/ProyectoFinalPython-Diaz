@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Editar Perfil{% endblock %}
+
+{% block contenido %}
+<div class="tarjeta">
+    <h1>Editar Perfil</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Datos personales</h3>
+        {{ form_usuario.as_p }}
+        <h3>Datos del perfil</h3>
+        {{ form_perfil.as_p }}
+        <button type="submit" class="btn btn-primario">Guardar</button>
+        <a href="{% url 'perfil' %}" class="btn btn-secundario">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
